@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>MH4U Damage Calculator</title>
+		<script src="js/jquery-2.1.4.min.js"></script>.
+		<script src="js/weapons.js"></script>
+		<script src="js/script.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/normalize.css">
+ 	 	<link rel="stylesheet" href="css/skeleton.css">
+ 	 	<style>
+ 	 		body{font-family: 'Open Sans', sans-serif;}
+ 	 		input[readonly]{
+ 	 			background-color:lightgray;
+ 	 		}
+ 	 	</style>
+	</head>
+	<body>
+		<form action="" class="container">
+			<h1>MH4U Damage Calculator</h1>
+			<div class="row">
+				<div class="three columns">
+					<label for="wpn">Weapon</label>
+					<select class="u-full-width" id="wpn" onchange="wdCalc.wpnSelect(this.value);">
+						<option></option>
+					</select>
+				</div>
+				<div class="four columns">
+					<label for="wpnName">Name</label>
+					<select class="u-full-width" id="wpnName" onchange="$('#atk').val(this.value).change();">
+						<option></option>
+					</select>
+				</div>
+				<div class="two columns">
+					<label for="atk">Attack</label>
+					<input class="u-full-width" id="atk" type="number" onchange="wdCalc.power(this.value);" />
+				</div>
+				<div class="two columns">
+					<label for="pwr">Power</label>
+					<input class="u-full-width" id="pwr" type="number" readonly />
+				</div>
+			</div>
+			<div class="row">
+				<div class="three columns">
+					<label for="mov">Motion</label>
+					<select class="u-full-width" id="mov" onchange="wdCalc.damage(this.value);"></select>
+				</div>
+				<div class="three columns">
+					<label for="eff">Effectiveness</label>
+					<input id="eff" type="number" onchange="wdCalc.damage(this.value);" value="65" />
+				</div>
+				<div class="three columns">
+					<label for="dmg">Damage</label>
+					<input id="dmg" type="number" />
+				</div>
+
+			</div>
+		</form>
+	</body>
+</html>
